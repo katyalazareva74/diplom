@@ -74,6 +74,8 @@ public class AccountService {
         sender.setAmount(senderAmount);
         BigDecimal receiverAmount = receiver.getAmount().add(dataObject.getSumma());
         receiver.setAmount(receiverAmount);
+        repository.save(sender);
+        repository.save(receiver);
         return true;
     }
 }
